@@ -52,3 +52,6 @@ chmod 750 /etc/my_init.d/web2py-startup.sh
 
 mkdir -p /config/opt/web2py/applications
 cp -r /opt/web2py/applications/* /config/opt/web2py/applications
+
+## install library for Regression Report
+pip install beautifulSoup4 requests xlrd pytz xlsxwriter
