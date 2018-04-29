@@ -21,4 +21,4 @@ VOLUME ["/opt/web2py/applications", "/var/log/nginx"]
 
 CMD ["/sbin/my_init"]
 
-EXPOSE 80
+EXPOSE 80 443
