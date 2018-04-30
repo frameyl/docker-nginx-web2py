@@ -15,7 +15,7 @@ Docker container for Nginx with Web2py based on [madharjan/docker-nginx](https:/
 
 | Variable       | Default | Example        |
 |----------------|---------|----------------|
-| WEB2PY_ADMIN   |         | Pa55w0rd       |
+| WEB2PY_ADMIN   |         | admin          |
 | DISABLE_UWSGI  | 0       | 1 (to disable) |
 
 
