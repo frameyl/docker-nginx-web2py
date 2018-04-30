@@ -22,6 +22,13 @@ if [ "${WEB2PY_MIN}" == false ]; then
   pip install gitpython
 fi
 
+# setup key
+mkdir /etc/nginx/ssl && cd /etc/nginx/ssl && \
+	openssl genrsa -passout pass:$CERT_PASS 1024 > web2py.key && \
+	chmod 400 web2py.key && \
+	openssl req -new -x509 -nodes -sha1 -days 1780 -subj "/C=US/ST=Denial/L=Chicago/O=Dis/CN=$CERT_DOMAIN" -key web2py.key > web2py.crt && \
+	openssl x509 -noout -fingerprint -text < web2py.crt > web2py.info
+
 ## Install Web2py
 cd /opt
 wget http://web2py.com/examples/static/web2py_src.zip
