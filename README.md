@@ -9,7 +9,7 @@ Docker container for Nginx with Web2py based on [madharjan/docker-nginx](https:/
 * Minimal (for production deploy) version of container `docker-nginx-web2py-min` for Web2py without `admin`, `example` and `welcome`
 * Bats ([sstephenson/bats](https://github.com/sstephenson/bats/)) based test cases
 
-## Nginx 1.4.6 & Web2py 2.14.6 (docker-nginx-web2py)
+## Nginx 1.4.6 & Web2py 2.16.1 (docker-nginx-web2py)
 
 **Environment**
 
@@ -75,7 +75,7 @@ docker run -d \
   -v /opt/docker/web2py/applications:/opt/web2py/applications \
   -v /opt/docker/web2py/log:/var/log/nginx \
   --name web2py \
-  madharjan/docker-nginx-web2py:2.14.6
+  registry.cn-hangzhou.aliyuncs.com/frameyl/web2py:2.16.1
 ```
 
 **Systemd Unit file**
@@ -92,7 +92,7 @@ ExecStartPre=-/bin/mkdir -p /opt/docker/web2py/applications
 ExecStartPre=-/bin/mkdir -p /opt/docker/web2py/log
 ExecStartPre=-/usr/bin/docker stop web2py
 ExecStartPre=-/usr/bin/docker rm web2py
-ExecStartPre=-/usr/bin/docker pull madharjan/docker-nginx-web2py:2.14.6
+ExecStartPre=-/usr/bin/docker pull registry.cn-hangzhou.aliyuncs.com/frameyl/web2py:2.16.1
 
 ExecStart=/usr/bin/docker run \
   -e WEB2PY_ADMIN=Pa55w0rd \
@@ -100,7 +100,7 @@ ExecStart=/usr/bin/docker run \
   -v /opt/docker/web2py/applications:/opt/web2py/applications \
   -v /opt/docker/web2py/log:/var/log/nginx \
   --name  web2py \
-  madharjan/docker-nginx-web2py:2.14.6
+  registry.cn-hangzhou.aliyuncs.com/frameyl/web2py:2.16.1
 
 ExecStop=/usr/bin/docker stop -t 2 web2py
 
@@ -127,7 +127,7 @@ docker run -d \
   -v /opt/docker/web2py/applications:/opt/web2py/applications \
   -v /opt/docker/web2py/log:/var/log/nginx \
   --name web2py \
-  madharjan/docker-nginx-web2py-min:2.14.6
+  registry.cn-hangzhou.aliyuncs.com/frameyl/web2py:2.16.1
 ```
 
 **Systemd Unit file**
@@ -144,7 +144,7 @@ ExecStartPre=-/bin/mkdir -p /opt/docker/web2py/applications
 ExecStartPre=-/bin/mkdir -p /opt/docker/web2py/log
 ExecStartPre=-/usr/bin/docker stop web2py
 ExecStartPre=-/usr/bin/docker rm web2py
-ExecStartPre=-/usr/bin/docker pull madharjan/docker-nginx-web2py-min:2.14.6
+ExecStartPre=-/usr/bin/docker pull registry.cn-hangzhou.aliyuncs.com/frameyl/web2py:2.16.1
 
 ExecStart=/usr/bin/docker run \
   -e WEB2PY_ADMIN=Pa55w0rd \
@@ -152,7 +152,7 @@ ExecStart=/usr/bin/docker run \
   -v /opt/docker/web2py/applications:/opt/web2py/applications \
   -v /opt/docker/web2py/log:/var/log/nginx \
   --name  web2py \
-  madharjan/docker-nginx-web2py-min:2.14.6
+  registry.cn-hangzhou.aliyuncs.com/frameyl/web2py:2.16.1
 
 ExecStop=/usr/bin/docker stop -t 2 web2py
 
