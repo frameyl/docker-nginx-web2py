@@ -1,5 +1,5 @@
 FROM madharjan/docker-nginx:1.4.6
-MAINTAINER Madhav Raj Maharjan <madhav.maharjan@gmail.com>
+MAINTAINER Chris Yang <frameyl@163.com>
 
 ARG VCS_REF
 ARG WEB2PY_VERSION
